@@ -9,8 +9,8 @@ Introduction
     :alt: Discord
 
 
-.. image:: https://github.com/CedarGroveStudios/CircuitPython_AirQualityTools/workflows/Build%20CI/badge.svg
-    :target: https://github.com/CedarGroveStudios/CircuitPython_AirQualityTools/actions
+.. image:: https://github.com/CedarGroveStudios/CircuitPython_TemperatureTools/workflows/Build%20CI/badge.svg
+    :target: https://github.com/CedarGroveStudios/CircuitPython_TemperatureTools/actions
     :alt: Build Status
 
 
@@ -107,7 +107,7 @@ Usage Example
 
 Documentation
 =============
-API documentation for this library can be found on `Read the Docs <https://github.com/CedarGroveStudios/CircuitPython_TemperatureTools/blob/main/media/pseudo_rtd_temperaturetools.pdf/>`_.
+API documentation for this library can be found on `Read the Docs <https://github.com/CedarGroveStudios/CircuitPython_TemperatureTools/blob/main/media/pseudo_rtd_cedargrove_temperaturetools.pdf/>`_.
 
 For information on building library documentation, please check out
 `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.
