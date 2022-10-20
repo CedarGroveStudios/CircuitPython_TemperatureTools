@@ -21,9 +21,16 @@ Introduction
 A collection of CircuitPython helpers for calculating and converting temperature.
 
 
-Temperature Unit Converters...
+``Dew Point`` calculates dew point temperature from measured temperature (Celsius)
+and humidity (percent). Returns the calculated dew point (Celsius) and summary
+description. Detailed description is provided if ``verbose=True``. Dew point value
+is constrained to the range of 0 to 40 (Celsius).
 
+``Heat Index`` calculates heat index temperature from measured temperature
+(Celsius) and humidity (percent). Returns the calculated heat index (Celsius)
+and summary description. Detailed description is provided if ``verbose=True``.
 
+``Unit Converters`` convert values between Celsius, Fahrenheit, and Kelvin.
 
 
 .. image:: https://github.com/CedarGroveStudios/CircuitPython_AirQualityTools/blob/main/media/WARNING.jpg
@@ -69,21 +76,32 @@ Usage Example
 
 .. code-block:: python
 
-    from cedargrove_airqualitytools.pm25_aqi import concentration_to_aqi
-    from cedargrove_airqualitytools.co2... import co2...
-    from cedargrove_airqualitytools.translate.english_to_francais import interpret
+    from cedargrove_temperaturetools.dew_point import dew_point
+    from cedargrove_temperaturetools.heat_index import heat_index
+    from cedargrove_temperaturetools.unit_converters import (
+        celsius_to_fahrenheit,
+        celsius_to_kelvin,
+    )
 
-    pm25_measurement = 10  # PM2.5 concentration of 10ppm; GOOD quality
+    # Measured temperature and humidity
+    TEMPERATURE = 24  # Degrees Celsius
+    HUMIDITY = 50  # Relative humidity in percent
 
-    data_valid, aqi_value, aqi_color, aqi_desc = concentration_to_aqi(pm25_measurement)
+    dew_point_temp, description = dew_point(TEMPERATURE, HUMIDITY)
+    print(f"Dew Point = {dew_point_temp} {description}")
 
-    print(aqi_value, aqi_desc)  # Print the AQI and description
-    print(interpret(True, aqi_desc))  # Provide the description in Français (French)
+    dew_point_temp, description = dew_point(TEMPERATURE, HUMIDITY, verbose=True)
+    print(f"Dew Point = {dew_point_temp} {description}")
 
-.. code-block:: python
+    heat_index_temp, description = heat_index(TEMPERATURE, HUMIDITY)
+    print(f"Heat Index = {heat_index_temp} {description}")
 
-    from cedargrove_airqualitytools.dewpoint import dewpoint...
-    from cedargrove_airqualitytools.heatindex import heatindex...
+    heat_index_temp, description = heat_index(TEMPERATURE, HUMIDITY, verbose=True)
+    print(f"Heat Index = {heat_index_temp} {description}")
+
+    print(f"Measured Temperature (Celsius) = {TEMPERATURE}")
+    print(f"Measured Temperature (Fahrenheit) = {celsius_to_fahrenheit(TEMPERATURE)}")
+    print(f"Measured Temperature (Kelvin) = {celsius_to_kelvin(TEMPERATURE)}")
 
 
 
