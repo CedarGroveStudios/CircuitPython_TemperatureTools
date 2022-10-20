@@ -5,7 +5,10 @@
 
 from cedargrove_temperaturetools.dew_point import dew_point
 from cedargrove_temperaturetools.heat_index import heat_index
-from cedargrove_temperaturetools.unit_converters import *
+from cedargrove_temperaturetools.unit_converters import (
+    celsius_to_fahrenheit,
+    celsius_to_kelvin,
+)
 
 # Measured temperature and humidity
 TEMPERATURE = 24  # Degrees Celsius
