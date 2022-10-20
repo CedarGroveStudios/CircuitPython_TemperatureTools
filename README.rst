@@ -18,7 +18,7 @@ Introduction
     :target: https://github.com/psf/black
     :alt: Code Style: Black
 
-A collection of CircuitPython helpers for calculating and converting temperature.
+A collection of CircuitPython helpers for calculating Dew Point, Heat Index, and for converting temperature units..
 
 
 ``Dew Point`` calculates dew point temperature from measured temperature (Celsius)
