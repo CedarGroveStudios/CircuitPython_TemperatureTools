@@ -49,7 +49,7 @@ def dew_point(deg_c, humidity, verbose=False):
     """Calculate dew point temperature from measured temperature (Celsius) and
     humidity (percent). Returns the calculated dew point (Celsius) and summary
     description. Detailed description is provided if verbose=True. Dew point
-    value is constrained to the range of 0 to 40 (Celsius).
+    value is constrained to the range of -10 to 40 (Celsius).
 
     :param float deg_c: The temperature in Celsius. No default.
     :param float humidity: The humidity in the range of 0 to 100
@@ -67,8 +67,8 @@ def dew_point(deg_c, humidity, verbose=False):
         2,
     )
 
-    # Constrain dew_point to range of 0 to 40 degrees Celsius
-    dew_point_c = min(max(dew_point_c, 0), 40)
+    # Constrain dew_point to range of -10 to 40 degrees Celsius
+    dew_point_c = min(max(dew_point_c, -10), 40)
 
     # Select message from list
     for _, (_, maximum, summary, detail) in enumerate(BREAKPOINTS):
