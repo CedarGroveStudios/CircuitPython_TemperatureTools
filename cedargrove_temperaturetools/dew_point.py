@@ -23,7 +23,7 @@ Implementation Notes
 """
 
 __version__ = "0.0.0+auto.0"
-__repo__ = "https://github.com/CedarGroveStudios/CircuitPython_AirQualityTools.git"
+__repo__ = "https://github.com/CedarGroveStudios/CircuitPython_TemperatureTools.git"
 
 
 # fmt: off
@@ -43,6 +43,7 @@ BREAKPOINTS = (
 )
 
 # fmt: on
+
 
 # Dew Point converter (degrees Celsius)
 def dew_point(deg_c, humidity, verbose=False):
